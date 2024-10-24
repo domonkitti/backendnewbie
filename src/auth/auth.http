@@ -1,0 +1,26 @@
+### create
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "domongigi2",
+    "password": "1234"
+    
+}
+### create
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "u3",
+    "password": "changeit"
+    
+}
+### create
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "u300",
+    "password": "changei"
+}

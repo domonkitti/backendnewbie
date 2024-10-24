@@ -1,0 +1,44 @@
+### create
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "Mouseipad",
+    "amount": 200,
+    "price": 500,
+    "contactMobileNo": "0891234567",
+    "falsetest":"test",
+    "description":"mouse for ipad"
+}
+### find all
+GET http://localhost:3000/items
+
+### find one
+GET http://localhost:3000/items/A
+
+### search by multi ids
+GET http://localhost:3000/items/search?ids=3,4
+### update
+PATCH http://localhost:3000/items/2
+Content-Type: application/json
+
+{
+    "title": "Mouse wireless",
+    "contactMobileNo": "0891234567"
+}
+### delete
+DELETE http://localhost:3000/items/1
+
+### find one by string
+GET http://localhost:3000/items/A
+### delete by string
+DELETE http://localhost:3000/items/99
+### create with wrong amount number type
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "Printer",
+    "amount": "SHOUD_BE_NUM",
+    "price": 5000    
+}
