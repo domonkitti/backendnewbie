@@ -5,10 +5,20 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "username": "domongigi2",
+    "username": "domongigi6",
     "password": "1234",
     "displayname":"mon"
 }
+
+### patch role
+PATCH  http://localhost:3000/users/32
+Content-Type: application/json
+
+{
+    "role":"ADMIN",
+    "displayname":"mon"
+}
+
 
 ### create with description
 POST http://localhost:3000/users

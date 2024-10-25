@@ -15,7 +15,7 @@ export class PerfLoggerInterceptor implements NestInterceptor {
     const message = `${className} ${url} ${method}`
 
     const now = Date.now()
-    this.logger.log(`Starting ${message}`, PerfLoggerInterceptor.name);  // Log ก่อนเริ่ม
+    this.logger.log(`เริ่ม ตัว interceptor`);  // Log ก่อนเริ่ม
 
     return next.handle().pipe(
       tap(() => this.logger.log(`${message} finish ${Date.now() - now} ms`, PerfLoggerInterceptor.name)),
@@ -23,7 +23,7 @@ export class PerfLoggerInterceptor implements NestInterceptor {
         this.logger.warn(`${message} ${err} finish ${Date.now() - now} ms`, PerfLoggerInterceptor.name)
         throw err
       }),
-      tap(() => this.logger.log(`Completed ${message}`, PerfLoggerInterceptor.name))  // Log หลังจบ
+      tap(() => this.logger.log(`จบ interceptor`))  // Log หลังจบ
     );
 
   }

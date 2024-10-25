@@ -4,6 +4,7 @@ import { User } from './entities/user.entity';
 import { EntityManager, Repository } from 'typeorm';
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 
 @Injectable()
@@ -54,6 +55,11 @@ export class UsersService {
       return null
     }
     return this.userRepository.findOneBy({ username })
+  }
+  update(id: number, updateUserDto:UpdateUserDto) {
+    return this.userRepository.save({
+      id, ...updateUserDto
+    })
   }
 
 }

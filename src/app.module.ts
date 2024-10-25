@@ -14,7 +14,8 @@ import { LoginLoggerMiddleware } from './middlewares/login-logger.middleware';
     ConfigModule.forRoot({ isGlobal: true, load: [dbConfig] }), 
     DbModule, 
     UsersModule, 
-    AuthModule]
+    AuthModule,
+  ]
 })
 export class AppModule implements NestModule { 
   configure(consumer: MiddlewareConsumer) {
